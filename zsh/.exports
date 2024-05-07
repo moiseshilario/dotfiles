@@ -15,6 +15,7 @@ export LANG="en_US"
 #export SUBL='subl'
 export CODE='code'
 export VIM='vim'
+export REACT_EDITOR='code'
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR=$VIM
@@ -38,6 +39,7 @@ export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/bin
+export PATH=/opt/homebrew/bin:$PATH
 export PATH=~/bin:$PATH
 
 # Android
@@ -50,5 +52,13 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Flutter
 export PATH=$PATH:$HOME/flutter/bin
 
+# Elixir
+export PATH=$PATH:$HOME/opt/homebrew/Cellar/elixir/1.13.4/bin
+
+export PATH=$PATH:$HOME/.cargo/bin
+
+export KERL_BUILD_DOCS="yes"
+export ELIXIR_ERL_OPTIONS="-kernel shell_history enabled"
+
 # facebook idb (debugg flipper in real devices)
-# PATH="$PATH:$HOME/Library/Python/3.9/bin"
+PATH="$PATH:$HOME/Library/Python/3.11/bin"

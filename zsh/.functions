@@ -1,6 +1,7 @@
+#!/bin/bash!
 # create a new directory and enter it
 function mkd {
-  mkdir -p "$@" && cd "$@"
+  mkdir -p "$@" && cd "$@" || exit
 }
 
 # editor
@@ -17,5 +18,9 @@ function e {
 # git
 # create and push to origin
 push-tag() {
-  git tag $1 && git push origin $1
+  git tag "$1" && git push origin "$1"
+}
+
+clear-watchman() {
+  watchman watch-del "$(pwd)" ; watchman watch-project "$(pwd)"
 }

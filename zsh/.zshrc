@@ -1,9 +1,3 @@
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
-
 # path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -38,7 +32,14 @@ export DOTFILES_GIT="$DOTFILES/git"
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES_ZSH/.bootstrap
 
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
+# loading node
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# loading rbenv
+# eval "$(rbenv init - zsh)"
+
+eval "$(direnv hook zsh)"
+
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
