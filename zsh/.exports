@@ -62,3 +62,9 @@ export ELIXIR_ERL_OPTIONS="-kernel shell_history enabled"
 
 # facebook idb (debugg flipper in real devices)
 PATH="$PATH:$HOME/Library/Python/3.11/bin"
+
+# Docker
+export PATH=$PATH:~/.docker/bin/
+
+# GPG
+export GPG_TTY=$(tty)
